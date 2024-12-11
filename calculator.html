@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+</head>
+<style>
+    button{
+      
+      padding-bottom: 3px;
+        margin-bottom: 10px;
+        background-color: pink;
+        padding-bottom: 10px;
+        color:blue
+        
+        
+    }
+    input[type="text"]{
+      color: aliceblue;
+    }
+
+</style>
+<body>
+<center>
+  <h1>Simple Calculator</h1>
+    <br><br><br><br>
+  <input type="text" id="result" readonly style="background-color: brown" > <br><br><br>
+  <br>
+  <button onclick="display('1')">1</button>
+  <button onclick="display('2')">2</button>
+  <button onclick="display('3')">3</button>
+  <button onclick="display('+')">+</button>
+  <br>
+  <button onclick="display('4')">4</button>
+  <button onclick="display('5')">5</button>
+  <button onclick="display('6')">6</button>
+  <button onclick="display('-')">-</button>
+  <br>
+  <button onclick="display('7')">7</button>
+  <button onclick="display('8')">8</button>
+  <button onclick="display('9')">9</button>
+  <button onclick="display('*')">*</button>
+  <br>
+  <button onclick="display('0')">0</button>
+  <button onclick="clearResult()">C</button>
+  <button onclick="display('/')">/</button>
+  <button onclick="calculate()">=</button>
+  </center>
+
+  <script>
+    let result = document.getElementById('result');
+
+    function display(value) {
+      result.value += value;
+      
+    }
+
+    function clearResult() {
+      result.value = '';
+      
+    }
+
+    function calculate() {
+      try {
+        result.value = eval(result.value);
+        alert(eval(result.value))
+      } catch (error) {
+        result.value = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>
